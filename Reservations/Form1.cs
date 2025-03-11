@@ -43,7 +43,7 @@ namespace Reservations
             string msg = "";
             if (!DateTime.TryParse(value, out date))
             {
-                msg = "must be in date form";
+                msg = name + "must be in date form";
             }
 
             return msg;
@@ -53,14 +53,17 @@ namespace Reservations
             DateTime min, DateTime max)
         {
             string msg = "";
-
+            if (DateTime.Parse(value)<min || DateTime.Parse(value)> max)
+            {
+                msg = "Date not within range " + min + " and " + max;
+            }
             return msg;
         }
 
         public string IsLaterDate(string earlyValue, string earlyName,
             string laterValue, string laterName)
         {
-            string msg = "";
+            string msg = earlyName + " must be before " + laterName;
 
             return msg;
         }
@@ -76,14 +79,7 @@ namespace Reservations
         // button click event
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            
-            string isArrivalDateTime = IsDateTime(txtArrivalDate.Text, "ArrivalDate");
-            string isDepartureDateTime = IsDateTime(txtDepartureDate.Text, "DepartureDate");
-
-            
-         
-           
-            
+                  
             decimal priceWeekday = 120m;
             decimal priceFriSat = 150m;
 
@@ -98,43 +94,51 @@ namespace Reservations
             // if they cannot be parsed into datetime values then error messages are thrown
             if(!arrivalCheck)
             {
-                string msg = IsDateTime(txtArrivalDate.Text, "ArrivalDate");
+                string msg = IsDateTime(txtArrivalDate.Text, "Arrival Date");
                 MessageBox.Show("Arrival date " + msg);
             } 
             else if (!departureCheck)
             {
-                string msg = IsDateTime(txtDepartureDate.Text, "DepartureDate");
-                MessageBox.Show("Departure date " + msg);
-            }
-               
-            TimeSpan dateDiff = departureDate.Subtract(arrivalDate); //create TimeSpan variable, subtracting arrival from departure
-
-            double numOfNights = dateDiff.TotalDays; // pull only the difference of days from dateDiff. 
-            txtNights.Text = numOfNights.ToString(); // set the number of days to the text box value
-
-            DateTime currentDate = arrivalDate; // set currentDate = arrivalDate for while loop condition
-            decimal totalPrice = 0m; // totalPrice = 0 and gets increased based on while loop
-
-            // Calculate total price based on the day of the week
-            while (currentDate < departureDate)
+                string msg = IsDateTime(txtDepartureDate.Text, "Departure Date");
+                MessageBox.Show(msg);
+            } 
+            else if (DateTime.Parse(txtDepartureDate.Text) <= DateTime.Parse(txtArrivalDate.Text))
             {
-                // apply weekday pricing if not Friday or Saturday
-                if (currentDate.DayOfWeek != DayOfWeek.Friday && currentDate.DayOfWeek != DayOfWeek.Saturday)
-                {
-                    totalPrice += priceWeekday; // add weekday price to total price for every weekday
-                }
-                else
-                {
-                    totalPrice += priceFriSat; // add weekend price to totalfor every weekend day
-                }
-                currentDate = currentDate.AddDays(1); // iterate the day  
+                string msg = IsLaterDate(txtArrivalDate.Text,"Arrival Date", txtDepartureDate.Text, "Departure Date");
+                MessageBox.Show(msg);
             }
+            else
+            {
+                TimeSpan dateDiff = departureDate.Subtract(arrivalDate); //create TimeSpan variable, subtracting arrival from departure
 
-            decimal pricePerNight = totalPrice / (decimal)numOfNights; // calculate the price per night
+                double numOfNights = dateDiff.TotalDays; // pull only the difference of days from dateDiff. 
+                txtNights.Text = numOfNights.ToString(); // set the number of days to the text box value
 
-            // display the values in their respective text boxes
-            txtTotalPrice.Text = totalPrice.ToString("c");
-            txtAvgPrice.Text = pricePerNight.ToString("c");
+                DateTime currentDate = arrivalDate; // set currentDate = arrivalDate for while loop condition
+                decimal totalPrice = 0m; // totalPrice = 0 and gets increased based on while loop
+
+                // Calculate total price based on the day of the week
+                while (currentDate < departureDate)
+                {
+                    // apply weekday pricing if not Friday or Saturday
+                    if (currentDate.DayOfWeek != DayOfWeek.Friday && currentDate.DayOfWeek != DayOfWeek.Saturday)
+                    {
+                        totalPrice += priceWeekday; // add weekday price to total price for every weekday
+                    }
+                    else
+                    {
+                        totalPrice += priceFriSat; // add weekend price to totalfor every weekend day
+                    }
+                    currentDate = currentDate.AddDays(1); // iterate the day  
+                }
+
+                decimal pricePerNight = totalPrice / (decimal)numOfNights; // calculate the price per night
+
+                // display the values in their respective text boxes
+                txtTotalPrice.Text = totalPrice.ToString("c");
+                txtAvgPrice.Text = pricePerNight.ToString("c");
+            }
+          
         }
             
         
