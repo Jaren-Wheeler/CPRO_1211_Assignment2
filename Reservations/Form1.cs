@@ -36,9 +36,15 @@ namespace Reservations
             return msg;
         }
 
+        // check whether the input format is in date format
         public string IsDateTime(string value, string name)
         {
+            DateTime date = new DateTime();
             string msg = "";
+            if (!DateTime.TryParse(value, out date))
+            {
+                msg = "must be in date form";
+            }
 
             return msg;
         }
@@ -70,13 +76,37 @@ namespace Reservations
         // button click event
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            
+            string isArrivalDateTime = IsDateTime(txtArrivalDate.Text, "ArrivalDate");
+            string isDepartureDateTime = IsDateTime(txtDepartureDate.Text, "DepartureDate");
+
+            
+         
+           
+            
             decimal priceWeekday = 120m;
             decimal priceFriSat = 150m;
 
-            // grab the two input values as strings and parse into DateTime variables
-            DateTime arrivalDate = DateTime.Parse(txtArrivalDate.Text);
-            DateTime departureDate = DateTime.Parse(txtDepartureDate.Text);
+            // create arrival and depature datetime objects
+            DateTime arrivalDate;
+            DateTime departureDate;
 
+            // try and parse both inputs into datetime values
+            bool arrivalCheck = DateTime.TryParse(txtArrivalDate.Text, out arrivalDate);
+            bool departureCheck = DateTime.TryParse(txtDepartureDate.Text, out departureDate);
+
+            // if they cannot be parsed into datetime values then error messages are thrown
+            if(!arrivalCheck)
+            {
+                string msg = IsDateTime(txtArrivalDate.Text, "ArrivalDate");
+                MessageBox.Show("Arrival date " + msg);
+            } 
+            else if (!departureCheck)
+            {
+                string msg = IsDateTime(txtDepartureDate.Text, "DepartureDate");
+                MessageBox.Show("Departure date " + msg);
+            }
+               
             TimeSpan dateDiff = departureDate.Subtract(arrivalDate); //create TimeSpan variable, subtracting arrival from departure
 
             double numOfNights = dateDiff.TotalDays; // pull only the difference of days from dateDiff. 
@@ -106,6 +136,8 @@ namespace Reservations
             txtTotalPrice.Text = totalPrice.ToString("c");
             txtAvgPrice.Text = pricePerNight.ToString("c");
         }
+            
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
