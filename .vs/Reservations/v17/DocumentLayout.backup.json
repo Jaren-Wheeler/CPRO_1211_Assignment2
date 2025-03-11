@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{1DB9EDAF-272D-455B-A583-57AEDF645473}|Reservations\\Reservations.csproj|solutionrelative:reservations\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DB9EDAF-272D-455B-A583-57AEDF645473}|Reservations\\Reservations.csproj|c:\\users\\jaren\\documents\\school\\cpro 1121-c#.net\\assignment2\\reservations\\reservations\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1DB9EDAF-272D-455B-A583-57AEDF645473}|Reservations\\Reservations.csproj|C:\\Users\\jaren\\Documents\\School\\CPRO 1121-C#.NET\\Assignment2\\Reservations\\reservations\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1DB9EDAF-272D-455B-A583-57AEDF645473}|Reservations\\Reservations.csproj|solutionrelative:reservations\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -25,17 +25,8 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jaren\\Documents\\School\\CPRO 1121-C#.NET\\Assignment2\\Reservations\\Reservations\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Reservations\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\jaren\\Documents\\School\\CPRO 1121-C#.NET\\Assignment2\\Reservations\\Reservations\\Form1.Designer.cs",
-              "RelativeToolTip": "Reservations\\Form1.Designer.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAMwJkAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:21:24.63Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -45,10 +36,22 @@
               "RelativeDocumentMoniker": "Reservations\\Form1.cs",
               "ToolTip": "C:\\Users\\jaren\\Documents\\School\\CPRO 1121-C#.NET\\Assignment2\\Reservations\\Reservations\\Form1.cs",
               "RelativeToolTip": "Reservations\\Form1.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowFMAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwEgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-09T21:20:59.722Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\jaren\\Documents\\School\\CPRO 1121-C#.NET\\Assignment2\\Reservations\\Reservations\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Reservations\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\jaren\\Documents\\School\\CPRO 1121-C#.NET\\Assignment2\\Reservations\\Reservations\\Form1.Designer.cs",
+              "RelativeToolTip": "Reservations\\Form1.Designer.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAmwL0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T21:21:24.63Z"
             },
             {
               "$type": "Document",
@@ -59,8 +62,7 @@
               "ToolTip": "C:\\Users\\jaren\\Documents\\School\\CPRO 1121-C#.NET\\Assignment2\\Reservations\\Reservations\\Form1.cs [Design]",
               "RelativeToolTip": "Reservations\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T21:19:06.96Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-09T21:19:06.96Z"
             }
           ]
         }

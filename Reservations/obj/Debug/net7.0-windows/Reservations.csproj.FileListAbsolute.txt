@@ -14,3 +14,4 @@ C:\Users\jaren\Documents\School\CPRO 1121-C#.NET\Assignment2\Reservations\Reserv
 C:\Users\jaren\Documents\School\CPRO 1121-C#.NET\Assignment2\Reservations\Reservations\obj\Debug\net7.0-windows\Reservations.pdb
 C:\Users\jaren\Documents\School\CPRO 1121-C#.NET\Assignment2\Reservations\Reservations\obj\Debug\net7.0-windows\Reservations.genruntimeconfig.cache
 C:\Users\jaren\Documents\School\CPRO 1121-C#.NET\Assignment2\Reservations\Reservations\obj\Debug\net7.0-windows\ref\Reservations.dll
+C:\Users\jaren\Documents\School\CPRO 1121-C#.NET\Assignment2\Reservations\Reservations\obj\Debug\net7.0-windows\Reservations.sourcelink.json
